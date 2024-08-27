@@ -17,9 +17,9 @@ public class ConeRunner {
 
 	public static void calculateVolume(final Scanner input) {
 		System.out.print("Enter the radius :: ");
-		int radius = input.nextInt();
+		double radius = input.nextDouble();
 		System.out.print("Enter the height :: ");
-		int height = input.nextInt();
+		double height = input.nextDouble();
 
 		System.out.println((Math.PI / 3) * Math.pow(radius, 2) * height);
 	}
