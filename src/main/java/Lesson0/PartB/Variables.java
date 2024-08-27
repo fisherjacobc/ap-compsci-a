@@ -1,5 +1,7 @@
-//
-
+/**
+ * @author Jacob Fisher
+ * @created 21 Aug 2024
+ */
 public class Variables {
 	public static void main(String[] args) {
 		// define 1 variable of each of the

@@ -1,7 +1,9 @@
-//
-
 import java.util.Scanner;
 
+/**
+ * @author Jacob Fisher
+ * @created 21 Aug 2024
+ */
 public class Input {
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
