@@ -21,7 +21,9 @@ public class ConeRunner {
 		System.out.print("Enter the height :: ");
 		double height = input.nextDouble();
 
-		System.out.println((Math.PI / 3) * Math.pow(radius, 2) * height);
+		double volume = (Math.PI / 3) * Math.pow(radius, 2) * height;
+
+		System.out.printf("%.2f\n", volume);
 	}
 }
 
