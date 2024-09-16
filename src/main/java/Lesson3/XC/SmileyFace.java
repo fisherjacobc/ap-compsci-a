@@ -5,6 +5,10 @@ import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Canvas;
 
+/**
+ * @author Jacob Fisher
+ * @created 12 Sep 2024
+ */
 public class SmileyFace extends Canvas {
    public SmileyFace() // constructor - sets up the class
    {
@@ -18,13 +22,20 @@ public class SmileyFace extends Canvas {
    }
 
    public void smileyFace(Graphics window) {
-      window.setColor(Color.BLUE);
-      window.drawString("SMILEY FACE LAB ", 35, 35);
-
+      // circle bg
       window.setColor(Color.YELLOW);
-      window.fillOval(210, 100, 400, 400);
+      window.fillOval(200, 100, 400, 400);
 
-      // add more code here
+      // eyes
+      window.setColor(Color.GREEN);
+      window.fillOval(265, 200, 70, 50);
+      window.fillOval(465, 200, 70, 50);
 
+      // nose
+      window.setColor(Color.BLACK);
+      window.fillOval(375, 300, 50, 50);
+
+      // mouth
+      window.drawArc(300, 350, 200, 100, 180, 180);
    }
 }
