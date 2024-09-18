@@ -1,4 +1,3 @@
-
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
@@ -24,7 +23,6 @@ public class Social {
 	}
 
 	public void chopAndAdd() {
-		// indexof and substring
 		int dash1 = socialNum.indexOf("-");
 		int dash2 = socialNum.indexOf("-", dash1 + 1);
 
