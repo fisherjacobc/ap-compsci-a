@@ -17,7 +17,7 @@ public class MonsterRunner {
 		int size1 = keyboard.nextInt();
 		Monster monster1 = new Monster(name1, size1);
 
-		System.out.println("Enter 2nd monster's name : ");
+		System.out.print("Enter 2nd monster's name : ");
 		String name2 = keyboard.next();
 		System.out.print("Enter 2nd monster's size : ");
 		int size2 = keyboard.nextInt();

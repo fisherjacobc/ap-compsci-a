@@ -31,7 +31,7 @@ public class Monster {
 	}
 
 	public boolean namesTheSame(Monster other) {
-		return this.name == other.getName();
+		return this.name.equals(other.getName());
 	}
 
 	public String toString() {
