@@ -1,44 +1,40 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name - 
 
-public class Monster
-{
+/**
+ * @author Jacob Fisher
+ * @created 09 Oct 2024
+ */
+public class Monster {
 	private String name;
-	private int howBig;	
+	private int howBig;
 
-	public Monster(String n, int size)
-	{
-	}
-
-	public String getName()
-	{
-		return "";
-	}
-	
-	public int getHowBig()
-	{
-		return 0;
-	}
-	
-	public boolean isBigger(Monster other)
-	{
-		return false;
-	}
-	
-	public boolean isSmaller(Monster other)
-	{
-		//call isBigger() use !
-		return false;
+	public Monster(String n, int size) {
+		this.name = n;
+		this.howBig = size;
 	}
 
-	public boolean namesTheSame(Monster other)
-	{
-		return false;
+	public String getName() {
+		return this.name;
 	}
-	
-	public String toString()
-	{
-		return "";
+
+	public int getHowBig() {
+		return this.howBig;
+	}
+
+	public boolean isBigger(Monster other) {
+		return this.howBig > other.getHowBig();
+	}
+
+	public boolean isSmaller(Monster other) {
+		return !this.isBigger(other);
+	}
+
+	public boolean namesTheSame(Monster other) {
+		return this.name == other.getName();
+	}
+
+	public String toString() {
+		return this.name + " " + this.howBig;
 	}
 }

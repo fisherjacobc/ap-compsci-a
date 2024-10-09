@@ -1,3 +1,7 @@
+/**
+ * @author Jacob Fisher
+ * @created 07 Oct 2024
+ */
 class Tweet {
 	private String message;
 	private int retweets;
@@ -30,6 +34,6 @@ class Tweet {
 	}
 
 	public String toString() {
-		return "msg " + message;
+		return "msg " + this.message + " rt " + this.retweets + " lk " + this.likes;
 	}
 }
