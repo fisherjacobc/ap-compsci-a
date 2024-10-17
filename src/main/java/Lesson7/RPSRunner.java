@@ -11,14 +11,21 @@ import static java.lang.System.*;
 public class RPSRunner {
 	public static void main(String args[]) {
 		Scanner keyboard = new Scanner(System.in);
-		char response;
+		char response = 'y';
+		RockPaperScissors game = new RockPaperScissors();
 
-		// add in a do while loop after you get the basics up and running
-		out.print("Rock-Paper-Scissors - pick your weapon[R,P,S]:: ");
-		String player = keyboard.next();
+		while (response == 'y') {
+			out.print("Rock-Paper-Scissors - pick your weapon[R,P,S]:: ");
+			String player = keyboard.next();
 
-		RockPaperScissors game = new RockPaperScissors(player.toUpperCase().charAt(0));
-		System.out.println(game.determineWinner());
+			game.setPlayers(player.toUpperCase().charAt(0));
+			System.out.println("player had " + player.toUpperCase().charAt(0));
+			System.out.println("computer had " + game.toString());
+			System.out.println(game.determineWinner());
+
+			out.print("\nDo you want to play again? ");
+			response = keyboard.next().charAt(0);
+		}
 
 		keyboard.close();
 	}

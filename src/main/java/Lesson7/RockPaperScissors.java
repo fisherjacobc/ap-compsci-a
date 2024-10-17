@@ -1,9 +1,6 @@
 //(c) A+ Computer Science
 // www.apluscompsci.com
 
-import java.util.Scanner;
-import static java.lang.System.*;
-
 /**
  * @author Jacob Fisher
  * @created 15 Oct 2024
@@ -13,13 +10,19 @@ public class RockPaperScissors {
 	private char playChoice;
 	private char compChoice;
 
+	public RockPaperScissors() {
+	}
+
 	public RockPaperScissors(char playerChoice) {
+		this.setPlayers(playerChoice);
+	}
+
+	public void setPlayers(char playerChoice) {
 		this.playChoice = playerChoice;
+		this.compChoice = choices[(int) (Math.random() * 3)];
 	}
 
 	public String determineWinner() {
-		this.compChoice = choices[(int) (Math.random() * 3)];
-
 		if (this.playChoice == this.compChoice)
 			return "!Draw Game!";
 
@@ -45,7 +48,6 @@ public class RockPaperScissors {
 	}
 
 	public String toString() {
-		String output = "";
-		return output;
+		return "" + this.compChoice;
 	}
 }
