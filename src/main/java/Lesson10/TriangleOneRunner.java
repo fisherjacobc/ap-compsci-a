@@ -1,9 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-import static java.lang.System.*;
-import java.util.Scanner;
-
 /**
  * @author Jacob Fisher
  * @created 12 Nov 2024

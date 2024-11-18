@@ -6,7 +6,7 @@
  * @created 12 Nov 2024
  */
 public class TriangleOne {
-	public static String go(String let, int size) {
+	public static String go(int size, String let) {
 		String output = "";
 
 		for (int i = 1; i <= size; i++) {
