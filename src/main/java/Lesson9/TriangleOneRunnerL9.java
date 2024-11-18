@@ -5,16 +5,16 @@
  * @author Jacob Fisher
  * @created 7 Nov 2024
  */
-public class TriangleOneRunner {
+public class TriangleOneRunnerL9 {
 	public static void main(String[] args) {
-		TriangleOne.print("hippo");
+		TriangleOneL9.print("hippo");
 		System.out.println("\n");
-		TriangleOne.print("abcd");
+		TriangleOneL9.print("abcd");
 		System.out.println("\n");
-		TriangleOne.print("it");
+		TriangleOneL9.print("it");
 		System.out.println("\n");
-		TriangleOne.print("a");
+		TriangleOneL9.print("a");
 		System.out.println("\n");
-		TriangleOne.print("chicken");
+		TriangleOneL9.print("chicken");
 	}
 }
