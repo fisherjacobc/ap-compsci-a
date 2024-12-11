@@ -7,7 +7,7 @@
  */
 public class DogRunner {
 	public static void main(String[] args) {
-		Dog d = new Dog("rover");
+		Lesson3Dog d = new Lesson3Dog("rover");
 		System.out.println(d.getPeopleAge(7));
 		d.increaseAgeByOne();
 		d.increaseAgeByOne();
@@ -18,7 +18,7 @@ public class DogRunner {
 		d.increaseAgeByOne();
 		d.increaseAgeByOne();
 		System.out.println(d.getPeopleAge(8));
-		Dog g = new Dog("bob", 3);
+		Lesson3Dog g = new Lesson3Dog("bob", 3);
 		System.out.println(g.getName());
 		System.out.println(g.getPeopleAge(5));
 	}
