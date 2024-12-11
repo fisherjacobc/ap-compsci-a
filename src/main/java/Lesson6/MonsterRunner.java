@@ -15,13 +15,13 @@ public class MonsterRunner {
 		String name1 = keyboard.next();
 		System.out.print("Enter 1st monster's size : ");
 		int size1 = keyboard.nextInt();
-		Monster monster1 = new Monster(name1, size1);
+		Lesson6Monster monster1 = new Lesson6Monster(name1, size1);
 
 		System.out.print("Enter 2nd monster's name : ");
 		String name2 = keyboard.next();
 		System.out.print("Enter 2nd monster's size : ");
 		int size2 = keyboard.nextInt();
-		Monster monster2 = new Monster(name2, size2);
+		Lesson6Monster monster2 = new Lesson6Monster(name2, size2);
 
 		boolean bigger = monster1.isBigger(monster2);
 

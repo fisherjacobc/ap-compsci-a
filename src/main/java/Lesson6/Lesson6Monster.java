@@ -5,11 +5,11 @@
  * @author Jacob Fisher
  * @created 09 Oct 2024
  */
-public class Monster {
+public class Lesson6Monster {
 	private String name;
 	private int howBig;
 
-	public Monster(String n, int size) {
+	public Lesson6Monster(String n, int size) {
 		this.name = n;
 		this.howBig = size;
 	}
@@ -22,15 +22,15 @@ public class Monster {
 		return this.howBig;
 	}
 
-	public boolean isBigger(Monster other) {
+	public boolean isBigger(Lesson6Monster other) {
 		return this.howBig > other.getHowBig();
 	}
 
-	public boolean isSmaller(Monster other) {
+	public boolean isSmaller(Lesson6Monster other) {
 		return !this.isBigger(other);
 	}
 
-	public boolean namesTheSame(Monster other) {
+	public boolean namesTheSame(Lesson6Monster other) {
 		return this.name.equals(other.getName());
 	}
 
