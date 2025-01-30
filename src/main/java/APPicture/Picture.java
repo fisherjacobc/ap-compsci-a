@@ -241,17 +241,17 @@ public class Picture extends SimplePicture {
 
   /** Mirror just part of a picture of a temple */
   public void mirrorArms() {
-    int mirrorPoint = 195;
+    int mirrorPoint = 190;
     Pixel topPixel = null;
     Pixel BottomPixel = null;
     Pixel[][] pixels = this.getPixels2D();
 
     // loop through the columns
-    for (int col = 100; col < 200; col++) {
+    for (int col = 100; col < 300; col++) {
       // loop through the rows
-      for (int row = 155; row < mirrorPoint; row++) {
-        topPixel = pixels[row][col - row + mirrorPoint];
-        BottomPixel = pixels[row][col];
+      for (int row = 160; row < mirrorPoint; row++) {
+        topPixel = pixels[row][col];
+        BottomPixel = pixels[mirrorPoint - row + mirrorPoint][col];
         BottomPixel.setColor(topPixel.getColor());
       }
     }
