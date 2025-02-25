@@ -5,16 +5,16 @@
  * @author Jacob Fisher
  * @created 10 Sep 2024
  */
-public class Dog {
+public class Lesson3Dog {
   private int age;
   private String name;
 
-  public Dog(String n) {
+  public Lesson3Dog(String n) {
     age = 1;
     name = n;
   }
 
-  public Dog(String n, int a) {
+  public Lesson3Dog(String n, int a) {
     age = a;
     name = n;
   }
