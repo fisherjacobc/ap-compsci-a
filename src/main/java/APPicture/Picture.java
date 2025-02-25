@@ -302,21 +302,66 @@ public class Picture extends SimplePicture {
     }
   }
 
+  /**
+   * copy from the passed fromPic to the
+   * specified startRow and startCol in the
+   * current picture
+   * 
+   * @param fromPic  the picture to copy from
+   * @param startRow the start row to copy to
+   * @param startCol the start col to copy to
+   * @param endRow the end row to copy to
+   * @param endCol the end col to copy to
+   */
+  public void copy(Picture fromPic,
+      int startRow, int startCol, int endRow, int endCol) {
+    Pixel fromPixel = null;
+    Pixel toPixel = null;
+    Pixel[][] toPixels = this.getPixels2D();
+    Pixel[][] fromPixels = fromPic.getPixels2D();
+    for (int fromRow = startRow, toRow = endRow; fromRow < fromPixels.length &&
+        toRow < toPixels.length; fromRow++, toRow++) {
+      for (int fromCol = startCol, toCol = endCol; fromCol < fromPixels[0].length &&
+          toCol < toPixels[0].length; fromCol++, toCol++) {
+        fromPixel = fromPixels[fromRow][fromCol];
+        toPixel = toPixels[toRow][toCol];
+        toPixel.setColor(fromPixel.getColor());
+      }
+    }
+  }
+
   /** Method to create a collage of several pictures */
   public void createCollage() {
     Picture flower1 = new Picture("flower1.jpg");
     Picture flower2 = new Picture("flower2.jpg");
-    this.copy(flower1, 0, 0);
-    this.copy(flower2, 100, 0);
-    this.copy(flower1, 200, 0);
+    this.copy(flower1, 0, 0, 5, 0);
+    this.copy(flower2, 5, 0, 100, 0);
+    this.copy(flower1, 10, 0, 200, 0);
     Picture flowerNoBlue = new Picture(flower2);
     flowerNoBlue.zeroBlue();
-    this.copy(flowerNoBlue, 300, 0);
-    this.copy(flower1, 400, 0);
-    this.copy(flower2, 500, 0);
+    this.copy(flowerNoBlue, 15, 0, 300, 0);
+    this.copy(flower1, 20, 0, 400, 0);
+    this.copy(flower2, 25, 0, 500, 0);
     this.mirrorVertical();
     this.write("collage.jpg");
   }
+
+  /** Method to create my collage of several pictures */
+  public void myCollage() {
+    Picture robot = new Picture("robot.jpg");
+    Picture flower1 = new Picture("flower1.jpg");
+    this.copy(robot, 0, 0, 5, 0);
+    this.copy(flower1, 5, 0, 100, 0);
+    this.copy(flower1, 10, 0, 200, 0);
+    Picture koalaZeroBlue = new Picture("koala.jpg");
+    koalaZeroBlue.zeroBlue();
+    this.copy(koalaZeroBlue, 15, 0, 300, 0);
+    this.copy(robot, 20, 0, 400, 0);
+    this.copy(flower1, 25, 0, 500, 0);
+    this.mirrorVertical();
+    this.write("collage.jpg");
+  }
+
 
   /**
    * Method to show large changes in color
@@ -324,19 +369,25 @@ public class Picture extends SimplePicture {
    * @param edgeDist the distance for finding edges
    */
   public void edgeDetection(int edgeDist) {
-    Pixel leftPixel = null;
+    Pixel selectedPixel = null;
     Pixel rightPixel = null;
+    Pixel bottomPixel = null;
     Pixel[][] pixels = this.getPixels2D();
     Color rightColor = null;
-    for (int row = 0; row < pixels.length; row++) {
+    Color bottomColor = null;
+    for (int row = 0; row < pixels.length - 1; row++) {
       for (int col = 0; col < pixels[0].length - 1; col++) {
-        leftPixel = pixels[row][col];
+        selectedPixel = pixels[row][col];
         rightPixel = pixels[row][col + 1];
+        bottomPixel = pixels[row + 1][col];
+        bottomColor = bottomPixel.getColor();
         rightColor = rightPixel.getColor();
-        if (leftPixel.colorDistance(rightColor) > edgeDist)
-          leftPixel.setColor(Color.BLACK);
+        if (selectedPixel.colorDistance(rightColor) > edgeDist)
+          selectedPixel.setColor(Color.BLACK);
+        if (selectedPixel.colorDistance(bottomColor) > edgeDist)
+          selectedPixel.setColor(Color.BLACK);
         else
-          leftPixel.setColor(Color.WHITE);
+          selectedPixel.setColor(Color.WHITE);
       }
     }
   }
