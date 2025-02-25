@@ -239,7 +239,7 @@ public class Picture extends SimplePicture {
     System.out.println("\nCount: " + count);
   }
 
-  /** Mirror just part of a picture of a temple */
+  /** Mirror just the snowman's arms */
   public void mirrorArms() {
     int mirrorPoint = 190;
     Pixel topPixel = null;
@@ -253,6 +253,25 @@ public class Picture extends SimplePicture {
         topPixel = pixels[row][col];
         BottomPixel = pixels[mirrorPoint - row + mirrorPoint][col];
         BottomPixel.setColor(topPixel.getColor());
+      }
+    }
+  }
+
+  /** Mirror just part the seagull image so there are two next to each other */
+  public void mirrorGull() {
+    int mirrorPoint = 360;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+
+    // loop through the rows
+    for (int row = 220; row < mirrorPoint; row++) {
+      // loop through the columns
+      for (int col = 220; col < 300; col++) {
+
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
+        rightPixel.setColor(leftPixel.getColor());
       }
     }
   }
