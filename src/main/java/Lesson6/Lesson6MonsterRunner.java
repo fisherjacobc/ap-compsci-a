@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @author Jacob Fisher
  * @created 09 Oct 2024
  */
-public class MonsterRunner {
+public class Lesson6MonsterRunner {
 	public static void main(String args[]) {
 		Scanner keyboard = new Scanner(System.in);
 
